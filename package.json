@@ -2,7 +2,7 @@
   "name": "vue-promise-cache",
   "version": "1.0.0",
   "description": "A promise based cache handler for Vue components",
-  "main": "src/index.js",
+  "main": "src/Cache.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
