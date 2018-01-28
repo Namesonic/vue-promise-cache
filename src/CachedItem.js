@@ -13,7 +13,7 @@ class CachedItem {
   }
 
   set ready (payload) {
-    this._ready = payload ? true : false
+    this._ready = !!payload
   }
 
   set error (err) {

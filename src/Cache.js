@@ -10,10 +10,10 @@ class Cache {
     let items = []
     ids.forEach((id) => {
       if (!this.has(id)) {
-      this.find(id)
-    }
-    items.push(this.has(id))
-  })
+        this.find(id)
+      }
+      items.push(this.has(id))
+    })
     return items
   }
 
@@ -21,38 +21,38 @@ class Cache {
     let items = []
     ids.forEach((id) => {
       if (!this.has(id)) {
-      this.find(id)
-    }
-    items.push(this.has(id).data)
-  })
+        this.find(id)
+      }
+      items.push(this.has(id).data)
+    })
     return items
   }
 
   has (id) {
-    return this._items.find((item) => item.id === id )
+    return this._items.find((item) => item.id === id)
   }
 
   item (id) {
-    return this._items.find((item) => item.id === id )
+    return this._items.find((item) => item.id === id)
   }
 
   add (id) {
     if (Array.isArray(id)) {
       id.forEach((id) => {
         if (!this.has(id)) {
-        this._items.push(new CachedItem(id))
-      }
-    })
+          this._items.push(new CachedItem(id))
+        }
+      })
     } else {
       this._items.push(new CachedItem(id))
     }
   }
 
-  find(id) {
+  find (id) {
     if (Array.isArray(id)) {
       id.forEach(id => {
         this._find(id)
-    })
+      })
     } else {
       this._find(id)
     }
@@ -64,23 +64,23 @@ class Cache {
       // Run API callback
       this._api(id)
         .then((resp) => {
-        // get cache item
-        let i = this.has(id)
-        if (i) {
-          // Update cache item with the response
-          i.update(resp)
+          // get cache item
+          let i = this.has(id)
+          if (i) {
+            // Update cache item with the response
+            i.update(resp)
 
-          // Set cache item ready state
-          i.ready = true
-        }
-      })
-    .catch((err) => {
-        let i = this.has(id)
-        if (i) {
-          i.ready = true
-          i.error = err
-        }
-      })
+            // Set cache item ready state
+            i.ready = true
+          }
+        })
+        .catch((err) => {
+          let i = this.has(id)
+          if (i) {
+            i.ready = true
+            i.error = err
+          }
+        })
       return this.add(id)
     } else {
       return item
@@ -98,7 +98,7 @@ class Cache {
   remove (id) {
     this._items.splice(
       this._items.findIndex((item) =>
-      item.id === id), 1)
+        item.id === id), 1)
   }
 
   reset () {
