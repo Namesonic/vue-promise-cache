@@ -1,0 +1,24 @@
+{
+  "name": "vue-promise-cache",
+  "version": "1.0.0",
+  "description": "A promise based cache handler for Vue components",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Namesonic/vue-promise-cache.git"
+  },
+  "keywords": [
+    "VueJs",
+    "Promise",
+    "Cache"
+  ],
+  "author": "Jason Vance",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Namesonic/vue-promise-cache/issues"
+  },
+  "homepage": "https://github.com/Namesonic/vue-promise-cache#readme"
+}
