@@ -29,7 +29,7 @@ export default {
       yourList: [ 5, 6, 7, 10, 12, 13 ],
 
       // Create the primary cache
-      people: new Cache( (id) => {
+      people: new Cache( id => {
          return axios.get('people/' + id)
         }),
 
